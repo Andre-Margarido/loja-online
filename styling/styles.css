@@ -113,11 +113,15 @@ body {
 
 .breadcrumbs a {
   text-decoration: none;
-  color: #007bff;
+  color: #555;
 }
 
 .breadcrumbs span {
   color: #555;
+}
+
+.breadcrumbs a:hover {
+  color: #ff9900;
 }
 
 /* Responsividade */
