@@ -1,0 +1,143 @@
+@charset "UTF-8";
+/* Geral */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background-color: #242424;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  max-height: 50px;
+  flex-shrink: 0;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin: 10px 20px;
+  min-width: 200px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #333;
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-bar input::-moz-placeholder {
+  color: #888;
+}
+
+.search-bar input::placeholder {
+  color: #888;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  border: 1px solid #333;
+  background-color: #333;
+  color: #f5f5f5;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  border-color: #ff9900;
+}
+
+.user-options {
+  display: flex;
+  flex-shrink: 0; /* Evita que as opções de usuário fiquem muito pequenas */
+}
+
+.user-options a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #f5f5f5;
+  padding: 5px 10px;
+}
+
+.user-options a:hover {
+  border: 1px solid #ff9900;
+  border-radius: 4px;
+}
+
+/* Categories Bar */
+.categories-bar {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  padding: 10px 0;
+  flex-wrap: wrap; /* Permite que as categorias quebrem para uma nova linha */
+}
+
+.categories-bar a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #f5f5f5;
+}
+
+.categories-bar a:hover {
+  border: 1px solid #ff9900;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  margin: 15px;
+  font-size: 14px;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.breadcrumbs span {
+  color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .search-bar {
+    margin: 10px 0;
+  }
+  .user-options {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .categories-bar {
+    justify-content: flex-start;
+    padding: 10px;
+  }
+  .categories-bar a {
+    margin: 5px;
+  }
+}/*# sourceMappingURL=styles.css.map */
