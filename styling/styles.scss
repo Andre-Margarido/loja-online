@@ -1,13 +1,13 @@
-@import "foundations/colors";
-@import "foundations/typography";
+@import "./foundations/colors";
+@import "./foundations/_typography";
 
 /* Geral */
 body {
-  font-family: $font-text;
+  font-family: $font-body; // Fonte principal para textos
   margin: 0;
   padding: 0;
   background-color: $mainbck-color;
-  color: #333;
+  color: $text-color;
   display: flex;
   flex-direction: column;
 }
@@ -41,14 +41,14 @@ body {
 .search-bar input {
   flex: 1;
   padding: 10px;
-  border: 1px solid #333;
+  border: 1px solid $text-color;
   background-color: #1a1a1a;
   color: $mainbck-color;
   border-radius: 4px 0 0 4px;
 }
 
 .search-bar input::placeholder {
-  color: #888;
+  color: $text-muted;
 }
 
 .search-bar button {
@@ -66,7 +66,7 @@ body {
 
 .user-options {
   display: flex;
-  flex-shrink: 0; /* Evita que as opções de usuário fiquem muito pequenas */
+  flex-shrink: 0;
 }
 
 .user-options a {
@@ -87,12 +87,13 @@ body {
   justify-content: center;
   background-color: $navback-color;
   padding: 10px 0;
-  flex-wrap: wrap; /* Permite que as categorias quebrem para uma nova linha */
+  flex-wrap: wrap;
 }
 
 .categories-bar a {
   margin: 0 15px;
   text-decoration: none;
+  font-family: $font-heading;
   font-weight: bold;
   color: $mainbck-color;
 }
@@ -123,19 +124,30 @@ body {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 860px) {
   .main-header {
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
   }
 
-  .search-bar {
-    margin: 10px 0;
+  .logo {
+    order: 0;
+    align-self: flex-start;
+    margin-bottom: 10px;
   }
 
   .user-options {
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-self: flex-end;
+    margin-bottom: 10px;
+    order: 1;
+  }
+
+  .search-bar {
+    align-self: stretch;
+    margin-top: 10px;
+    order: 2;
   }
 
   .categories-bar {
