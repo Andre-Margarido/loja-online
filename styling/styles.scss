@@ -1,5 +1,5 @@
 @import "./foundations/colors";
-@import "./foundations/_typography";
+@import "./foundations/typography";
 
 /* Geral */
 body {
@@ -15,131 +15,356 @@ body {
 /* Header */
 .header {
   background-color: $containerbck-color;
-}
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; // Z-index para ficar acima de outros elementos
 
-.main-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 20px;
-  flex-wrap: wrap;
-}
+  .main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    transition: padding 0.3s;
 
-.logo {
-  max-height: 50px;
-  flex-shrink: 0;
-}
+    .logo {
+      max-height: 50px;
+      flex-shrink: 0;
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  margin: 10px 20px;
-  min-width: 200px;
-}
+      &.desktop-logo {
+        display: block;
+      }
 
-.search-bar input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid $text-color;
-  background-color: #1a1a1a;
-  color: $mainbck-color;
-  border-radius: 4px 0 0 4px;
-}
+      &.mobile-logo {
+        display: none;
+      }
+    }
 
-.search-bar input::placeholder {
-  color: $text-muted;
-}
+    .search-bar {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      margin: 10px 20px;
+      min-width: 200px;
 
-.search-bar button {
-  padding: 10px 20px;
-  border: 1px solid $navback-color;
-  background-color: $navback-color;
-  color: $mainbck-color;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-}
+      input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid $text-color;
+        background-color: #1a1a1a;
+        color: $text-light;
+        border-radius: 4px 0 0 4px;
 
-.search-bar button:hover {
-  border-color: $borderbutton-color;
-}
+        &::placeholder {
+          color: $text-light;
+        }
+      }
 
-.user-options {
-  display: flex;
-  flex-shrink: 0;
-}
+      button {
+        padding: 10px 20px;
+        border: 1px solid $navback-color;
+        background-color: $navback-color;
+        color: $text-light;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s; // Suaviza alterações
 
-.user-options a {
-  margin-left: 15px;
-  text-decoration: none;
-  color: $mainbck-color;
-  padding: 5px 10px;
-}
+        &:hover {
+          background-color: lighten(
+            $navback-color,
+            5%
+          ); // Leve mudança de cor ao passar o mouse
+          transform: scale(1.05); // Aumenta ligeiramente o botão
+        }
+      }
+    }
 
-.user-options a:hover {
-  border: 1px solid $hoover-color;
-  border-radius: 4px;
-}
+    .user-options {
+      display: flex;
+      flex-shrink: 0;
 
-/* Categories Bar */
-.categories-bar {
-  display: flex;
-  justify-content: center;
-  background-color: $navback-color;
-  padding: 10px 0;
-  flex-wrap: wrap;
-}
+      a {
+        margin-left: 15px;
+        text-decoration: none;
+        color: $text-light;
+        padding: 5px 10px;
+        position: relative; // Necessário para o efeito de hover
+        transition: color 0.3s ease, transform 0.3s ease; // Suaviza a transição
 
-.categories-bar a {
-  margin: 0 15px;
-  text-decoration: none;
-  font-family: $font-heading;
-  font-weight: bold;
-  color: $mainbck-color;
-}
+        &:hover {
+          color: $borderbutton-color; // Muda a cor do texto ao passar o mouse
+          transform: scale(1.05); // Aumenta ligeiramente ao passar o mouse
+        }
+      }
+    }
+  }
 
-.categories-bar a:hover {
-  border: 1px solid $hoover-color;
-  border-radius: 4px;
-  padding: 5px 10px;
-}
+  .categories-bar {
+    display: flex;
+    justify-content: center;
+    background-color: $navback-color;
+    padding: 10px 0;
+    flex-wrap: wrap;
 
-/* Breadcrumbs */
+    a {
+      margin: 0 15px;
+      text-decoration: none;
+      font-family: $font-heading;
+      font-weight: bold;
+      color: $text-light;
+      transition: transform 0.3s ease, color 0.3s ease; // Suaviza a transição
+
+      &:hover {
+        color: $hover-color; // Mudança de cor no hover
+        transform: scale(1.05); // Aumenta ligeiramente no hover
+      }
+    }
+  }
+}
 .breadcrumbs {
-  margin: 15px;
+  margin: 0;
+  padding: 10px 20px;
+  background-color: $mainbck-color;
+  z-index: 500; // Z-index ajustado para estar acima
   font-size: 14px;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    color: $breadcrumbs-color;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+
+  span {
+    color: $breadcrumbs-color;
+  }
 }
 
-.breadcrumbs a {
-  text-decoration: none;
-  color: $breadcrumbs-color;
+/* Main */
+main {
+  display: flex;
+  padding: 180px 20px 20px;
+
+  .filters {
+    flex: 1;
+    padding-right: 20px;
+
+    h4 {
+      margin-bottom: 1rem;
+      font-size: $font-size-lg;
+      font-family: $font-heading;
+      color: $hover-color;
+    }
+
+    // Receita para os filtros
+    .filter-category,
+    .filter-price,
+    .filter-brand,
+    .filter-availability {
+      margin-bottom: 1.5rem;
+    }
+
+    // Detalhes de cada filtro
+    .filter-category label,
+    .filter-price label,
+    .filter-brand label,
+    .filter-availability label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="range"] {
+      width: 100%; // Ajusta a largura do input range
+    }
+  }
+
+  .product-grid {
+    flex: 2; // Área de produtos ocupa 2/3 do espaço
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    .product {
+      background-color: $containerbck-color;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      h5 {
+        margin: 0.5rem 0;
+        font-size: $font-size-md;
+        color: $text-light;
+      }
+
+      p {
+        margin: 0.25rem 0;
+        color: $text-light;
+      }
+    }
+  }
 }
 
-.breadcrumbs span {
-  color: $breadcrumbs-color;
-}
+/* Footer */
+.footer {
+  background-color: $containerbck-color;
+  color: $text-light;
+  padding: 2rem;
+  font-family: $font-body;
 
-.breadcrumbs a:hover {
-  color: $hoover-color;
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .social {
+    flex: 1;
+    text-align: left;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-left: 25px;
+
+    .logo {
+      max-width: 250px;
+      margin-bottom: 1rem;
+    }
+
+    h4 {
+      font-size: $font-size-lg;
+      margin-bottom: 1rem;
+      font-family: $font-heading;
+      color: $hover-color;
+    }
+
+    .social-icons {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      gap: 1rem;
+
+      a {
+        color: $hover-color;
+        text-decoration: none;
+
+        img {
+          width: 30px;
+          height: auto;
+          filter: brightness(0) invert(1);
+          transition: transform 0.3s ease, filter 0.3s ease;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+
+        &:hover {
+          color: $borderbutton-color;
+        }
+      }
+    }
+
+    .award {
+      margin-top: 1rem;
+      max-width: 150px;
+    }
+  }
+
+  .links {
+    flex: 2;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-left: 20px;
+
+    > div {
+      // Nova regra para cada seção de links
+      flex: 1;
+      min-width: 150px;
+
+      h4 {
+        margin-bottom: 1rem;
+        font-size: $font-size-lg;
+        font-family: $font-heading;
+        color: $hover-color;
+        flex-basis: 100%;
+      }
+
+      ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        li {
+          margin-bottom: 0;
+
+          a {
+            color: $text-light;
+            text-decoration: none;
+            font-size: $font-size-sm;
+            transition: color 0.3s ease;
+
+            &:hover {
+              text-decoration: underline;
+              color: $borderbutton-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: $font-size-sm;
+    border-top: 1px solid $breadcrumbs-color;
+    padding-top: 1rem;
+  }
 }
 
 /* Responsividade */
 @media (max-width: 860px) {
+  /* Header */
   .main-header {
     flex-direction: column;
     align-items: flex-start;
     position: relative;
+    padding: 10px;
   }
 
   .logo {
     order: 0;
     align-self: flex-start;
     margin-bottom: 10px;
+    max-height: 40px;
+
+    &.desktop-logo {
+      display: none; // Oculta o logo desktop em telas pequenas
+    }
+
+    &.mobile-logo {
+      display: block; // Exibe o logo mobile em telas pequenas
+    }
   }
 
   .user-options {
     flex-wrap: nowrap;
-    align-self: flex-end;
+    align-self: flex-start;
     margin-bottom: 10px;
     order: 1;
   }
@@ -157,5 +382,33 @@ body {
 
   .categories-bar a {
     margin: 5px;
+    font-size: 14px;
+  }
+
+  .breadcrumbs {
+    font-size: 12px;
+    padding: 10px;
+    background-color: $mainbck-color;
+  }
+
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .social {
+    margin: 0; // Reseta margens
+    margin-bottom: 1rem;
+  }
+
+  .links {
+    flex-direction: column; // Alinha os links em coluna
+    width: 100%; // Garante que ocupe toda a largura disponível
+
+    > div {
+      flex: 1; // Cada seção de link ocupa o espaço necessário
+      min-width: auto; // Remove a largura mínima se necessário
+    }
   }
 }
