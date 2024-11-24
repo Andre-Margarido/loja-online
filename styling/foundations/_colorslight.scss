@@ -8,11 +8,11 @@ $text-light: #f4f4f4; // Cor clara para textos no footer
  */
 
 /* Cores de Fundo */
-$containerbck-color: #242424; // Fundo escuro para cabeçalhos e rodapés
-$navback-color: #333; // Fundo da barra de navegação
+$containerbck-color: white; // Fundo Branco lightmode
+$navback-color: white; // Fundo da barra de navegação
 
 /* Cores de Texto */
-$text-light: #f4f4f4; // Texto claro para rodapés e cabeçalhos
+$text-light: #333; // Texto claro para rodapés e cabeçalhos
 $text-color: #333; // Texto padrão
 
 /* Cores de Breadcrumbs e Bordas */
@@ -25,4 +25,4 @@ $checkbox-color: $borderbutton-color; // Cor do fundo da checkbox
 /* Cores de Fundo Claro */
 $mainbck-color: #f4f4f4; // Fundo claro para o corpo
 
-$filtro-logo: brightness(0) invert(1);
+$filtro-logo: brightness(0) invert(0);

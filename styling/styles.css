@@ -11,6 +11,18 @@ $text-light: #f4f4f4; // Cor clara para textos no footer
 /* Cores de Texto */
 /* Cores de Breadcrumbs e Bordas */
 /* Cores de Fundo Claro */
+/* $containerbck-color: #242424;
+$navback-color: #333;
+$breadcrumbs-color: #555;
+$borderbutton-color: #ff9900;
+$hoover-color: $borderbutton-color;
+$mainbck-color: #f4f4f4;
+$text-light: #f4f4f4; // Cor clara para textos no footer
+ */
+/* Cores de Fundo */
+/* Cores de Texto */
+/* Cores de Breadcrumbs e Bordas */
+/* Cores de Fundo Claro */
 /* Importação das fontes do Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;700&display=swap");
 /* Fontes principais */
@@ -20,7 +32,6 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #333;
 }
 
 h1,
@@ -31,7 +42,7 @@ h5,
 h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  color: #242424;
+  color: #333;
 }
 
 h1 {
@@ -71,7 +82,7 @@ body {
 
 /* Header */
 .header {
-  background-color: #242424;
+  background-color: white;
   position: fixed;
   top: 0;
   width: 100%;
@@ -88,6 +99,7 @@ body {
 .header .main-header .logo {
   max-height: 50px;
   flex-shrink: 0;
+  filter: brightness(0) invert(0);
 }
 .header .main-header .logo.desktop-logo {
   display: block;
@@ -107,26 +119,26 @@ body {
   padding: 10px;
   border: 1px solid #333;
   background-color: #1a1a1a;
-  color: #f4f4f4;
+  color: #333;
   border-radius: 4px 0 0 4px;
 }
 .header .main-header .search-bar input::-moz-placeholder {
-  color: #f4f4f4;
+  color: #333;
 }
 .header .main-header .search-bar input::placeholder {
-  color: #f4f4f4;
+  color: #333;
 }
 .header .main-header .search-bar button {
   padding: 10px 20px;
-  border: 1px solid #333;
-  background-color: #333;
-  color: #f4f4f4;
+  border: 1px solid white;
+  background-color: white;
+  color: #333;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
 }
 .header .main-header .search-bar button:hover {
-  background-color: #404040;
+  background-color: white;
   transform: scale(1.05);
 }
 .header .main-header .user-options {
@@ -136,7 +148,7 @@ body {
 .header .main-header .user-options a {
   margin-left: 15px;
   text-decoration: none;
-  color: #f4f4f4;
+  color: #333;
   padding: 5px 10px;
   position: relative;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -148,7 +160,7 @@ body {
 .header .categories-bar {
   display: flex;
   justify-content: center;
-  background-color: #333;
+  background-color: white;
   padding: 10px 0;
   flex-wrap: wrap;
 }
@@ -157,7 +169,7 @@ body {
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  color: #f4f4f4;
+  color: #333;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 .header .categories-bar a:hover {
@@ -192,10 +204,11 @@ main {
 }
 main .filters {
   flex: 1;
-  background-color: #242424;
+  background-color: white;
   border-radius: 8px;
+  border: 1px solid #242424;
   padding: 10px;
-  color: #f4f4f4;
+  color: #333;
   height: 100%;
   width: 100%;
 }
@@ -219,23 +232,62 @@ main .filters .filter-availability label {
   display: block;
   margin-bottom: 0.5rem;
 }
+main .filters h5 {
+  margin: 0.5rem 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: normal;
+}
 main .filters .category {
   padding: 10px;
   border: 2px solid #ff9900;
   border-radius: 5px;
   font-size: 16px;
-  background-color: #333;
-  color: #f4f4f4;
+  background-color: white;
+  color: #333;
   outline: none;
 }
-main .filters .brand-option,
-main .filters .stock-option {
+main .filters .filter-brand input[type=checkbox] {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  position: relative;
+  cursor: pointer;
+}
+main .filters .filter-brand input[type=checkbox]:checked {
+  background-color: #ff9900;
+  border-color: #ff9900;
+}
+main .filters .filter-brand input[type=checkbox]:checked::before {
+  content: "✔";
+  position: absolute;
+  top: -4px;
+  color: white;
+}
+main .filter-availability input[type=radio] {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  position: relative;
+  cursor: pointer;
+}
+main .filter-availability input[type=radio]:checked {
+  background-color: #ff9900;
+}
+main .brand-option,
+main .stock-option {
   display: flex;
   flex-direction: row;
   align-items: baseline;
   gap: 10px;
 }
-main .filters input[type=range] {
+main input[type=range] {
   -webkit-appearance: none;
   width: 80%;
   height: 8px;
@@ -244,13 +296,13 @@ main .filters input[type=range] {
   display: flex;
   justify-self: center;
 }
-main .filters input[type=range]::-webkit-slider-runnable-track {
+main input[type=range]::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   height: 8px;
   background: #ff9900;
   border-radius: 10px;
 }
-main .filters input[type=range]::-webkit-slider-thumb {
+main input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
@@ -260,7 +312,8 @@ main .filters input[type=range]::-webkit-slider-thumb {
   margin-top: -6px;
   cursor: pointer;
 }
-main .product-grid {
+
+.product-grid {
   flex: 5;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -268,33 +321,43 @@ main .product-grid {
   height: 100vh;
   overflow: auto;
 }
-main .product-grid .product {
-  background-color: #242424;
+.product-grid::-webkit-scrollbar {
+  display: none;
+}
+.product-grid .product {
+  background-color: white;
+  border: 1px solid #242424;
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
   min-height: 450px;
 }
-main .product-grid .product img {
+.product-grid .product img {
   width: 100%;
   height: 60%;
   -o-object-fit: contain;
      object-fit: contain;
 }
-main .product-grid .product h5 {
+.product-grid .product a {
   margin: 0.5rem 0;
+  text-decoration: none;
+  font-weight: 500;
   font-size: 18px;
-  color: #f4f4f4;
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
-main .product-grid .product p {
+.product-grid .product a:hover {
+  color: #ff9900;
+}
+.product-grid .product p {
   margin: 0.25rem 0;
-  color: #f4f4f4;
+  color: #333;
 }
 
 /* Footer */
 .footer {
-  background-color: #242424;
-  color: #f4f4f4;
+  background-color: white;
+  color: #333;
   padding: 2rem;
   font-family: "Roboto", sans-serif;
 }
@@ -314,6 +377,7 @@ main .product-grid .product p {
 .footer .social .logo {
   max-width: 250px;
   margin-bottom: 1rem;
+  filter: brightness(0) invert(0);
 }
 .footer .social h4 {
   font-size: 20px;
@@ -335,7 +399,7 @@ main .product-grid .product p {
 .footer .social .social-icons a img {
   width: 30px;
   height: auto;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(0);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 .footer .social .social-icons a img:hover {
@@ -378,7 +442,7 @@ main .product-grid .product p {
   margin-bottom: 0;
 }
 .footer .links > div ul li a {
-  color: #f4f4f4;
+  color: #333;
   text-decoration: none;
   font-size: 14px;
   transition: color 0.3s ease;
@@ -440,6 +504,7 @@ main .product-grid .product p {
     padding: 10px;
     background-color: #f4f4f4;
   }
+  /*main*/
   /* Footer */
   .footer-top {
     flex-direction: column;
