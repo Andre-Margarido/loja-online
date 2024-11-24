@@ -2,6 +2,9 @@
 @import "./foundations/typography";
 
 /* Geral */
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: $font-body; // Fonte principal para textos
   margin: 0;
@@ -148,12 +151,19 @@ body {
 main {
   display: flex;
   padding: 180px 20px 20px;
+  gap: 20px;
 
   .filters {
     flex: 1;
-    padding-right: 20px;
+    background-color: $containerbck-color;
+    border-radius: 8px;
+    padding: 10px;
+    color: $text-light;
+    height: 100%;
+    width: 100%;
 
     h4 {
+      margin-top: 1rem;
       margin-bottom: 1rem;
       font-size: $font-size-lg;
       font-family: $font-heading;
@@ -177,27 +187,76 @@ main {
       margin-bottom: 0.5rem;
     }
 
+    // Configuração do botão e menu de dropdownselect
+    .category {
+      padding: 10px;
+      border: 2px solid $borderbutton-color;
+      border-radius: 5px;
+      font-size: $font-size-base;
+      background-color: $navback-color;
+      color: $text-light;
+      outline: none;
+    }
+
+    // Alinha opções do filtros lado-a-lado e niveladas
+    .brand-option,
+    .stock-option {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      gap: 10px;
+    }
+
     input[type="range"] {
-      width: 100%; // Ajusta a largura do input range
+      -webkit-appearance: none; //linha para poder costumizar a barra
+      width: 80%; // Ajusta a largura do input range
+      height: 8px;
+      border-radius: 5px;
+      outline: none;
+      display: flex;
+      justify-self: center; //reduzi a largura do input e alinhei ao centro
+
+      &::-webkit-slider-runnable-track {
+        //configuração da barra
+        -webkit-appearance: none;
+        height: 8px;
+        background: $borderbutton-color;
+        border-radius: 10px;
+      }
+
+      &::-webkit-slider-thumb {
+        //configuração do botão deslizavel na barra
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        background: $borderbutton-color;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        margin-top: -6px;
+        cursor: pointer;
+      }
     }
   }
 
   .product-grid {
-    flex: 2; // Área de produtos ocupa 2/3 do espaço
+    flex: 5; // Área de produtos ocupa 5/6 do espaço
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    height: 100vh;
+    overflow: auto;
 
     .product {
       background-color: $containerbck-color;
       padding: 1rem;
       border-radius: 8px;
       text-align: center;
+      min-height: 450px;
 
       img {
         width: 100%;
-        height: auto;
-        object-fit: cover;
+        height: 60%;
+        object-fit: contain;
       }
 
       h5 {
@@ -336,15 +395,6 @@ main {
     padding-top: 1rem;
   }
 }
-
-/* Inicio container Sidebar e conteudo */
-
-.container {
-  display: grid;
-  grid-template-columns: 20% 80%;
-}
-
-/* Fim container Sidebar e conteudo */
 
 /* Responsividade */
 @media (max-width: 860px) {

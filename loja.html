@@ -45,10 +45,10 @@
     <!-- Main -->
     <main>
       <div class="filters">
-        <h4>Área para Filtros:</h4>
+        <h4>Filtros:</h4>
         <div class="filter-category">
-          <label for="category">Categoria do Produto:</label>
-          <select id="category">
+          <label for="category">Categoria:</label>
+          <select class="category" id="category">
             <option>Computadores</option>
             <option>Laptops</option>
             <option>Telemóveis</option>
@@ -57,29 +57,29 @@
         </div>
 
         <div class="filter-price">
-          <label for="price">Faixa de Preço:</label>
+          <label for="price">Preço:</label>
           <input type="range" id="price" min="0" max="6000" />
         </div>
 
         <div class="filter-brand">
           <label>Marca:</label>
-          <div>
+          <div class="brand-option">
             <input type="checkbox" id="apple" />
             <label for="apple">Apple</label>
           </div>
-          <div>
+          <div class="brand-option">
             <input type="checkbox" id="samsung" />
             <label for="samsung">Samsung</label>
           </div>
-          <div>
+          <div class="brand-option">
             <input type="checkbox" id="xiaomi" />
             <label for="xiaomi">Xiaomi</label>
           </div>
-          <div>
+          <div class="brand-option">
             <input type="checkbox" id="amd" />
             <label for="amd">AMD</label>
           </div>
-          <div>
+          <div class="brand-option">
             <input type="checkbox" id="msi" />
             <label for="msi">MSI</label>
           </div>
@@ -87,11 +87,11 @@
 
         <div class="filter-availability">
           <label>Disponibilidade:</label>
-          <div>
+          <div class="stock-option">
             <input type="radio" id="available" name="availability" />
             <label for="available">Disponível</label>
           </div>
-          <div>
+          <div class="stock-option">
             <input type="radio" id="out-of-stock" name="availability" />
             <label for="out-of-stock">Esgotado</label>
           </div>
@@ -100,10 +100,16 @@
 
       <div class="product-grid">
         <div class="product">
-          <img src="caminho/para/produto1.jpg" alt="Produto 1" />
-          <h5>Título do Produto 1</h5>
-          <p>Descrição do produto 1.</p>
-          <p>Preço: €1000</p>
+          <img
+            src="imagens\computadores\Apple iMac 24 Prateado.jpg"
+            alt="IMac 24 Prateado"
+          />
+          <h5>Apple IMac 24 Prateado</h5>
+          <p>
+            Computador All-in-one de 24 polegadas com processador M3, perfeito
+            para trabalhar e jogar
+          </p>
+          <p>Preço: 2089.00€</p>
         </div>
         <div class="product">
           <img src="caminho/para/produto2.jpg" alt="Produto 2" />
@@ -128,6 +134,24 @@
           <h5>Título do Produto 5</h5>
           <p>Descrição do produto 5.</p>
           <p>Preço: €3000</p>
+        </div>
+        <div class="product">
+          <img src="caminho/para/produto6.jpg" alt="Produto 6" />
+          <h5>Título do Produto 6</h5>
+          <p>Descrição do produto 6.</p>
+          <p>Preço: €3500</p>
+        </div>
+        <div class="product">
+          <img src="caminho/para/produto6.jpg" alt="Produto 6" />
+          <h5>Título do Produto 6</h5>
+          <p>Descrição do produto 6.</p>
+          <p>Preço: €3500</p>
+        </div>
+        <div class="product">
+          <img src="caminho/para/produto6.jpg" alt="Produto 6" />
+          <h5>Título do Produto 6</h5>
+          <p>Descrição do produto 6.</p>
+          <p>Preço: €3500</p>
         </div>
         <div class="product">
           <img src="caminho/para/produto6.jpg" alt="Produto 6" />
