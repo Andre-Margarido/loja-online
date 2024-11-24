@@ -117,6 +117,15 @@ body {
   color: #555;
 }
 
+/* Inicio container Sidebar e conteudo */
+
+.container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+/* Fim container Sidebar e conteudo */
+
 /* Responsividade */
 @media (max-width: 768px) {
   .main-header {
