@@ -1,1 +1,24 @@
-$primary-color: red;
+/* $containerbck-color: #242424;
+$navback-color: #333;
+$breadcrumbs-color: #555;
+$borderbutton-color: #ff9900;
+$hoover-color: $borderbutton-color;
+$mainbck-color: #f4f4f4;
+$text-light: #f4f4f4; // Cor clara para textos no footer
+ */
+
+/* Cores de Fundo */
+$containerbck-color: #242424; // Fundo escuro para cabeçalhos e rodapés
+$navback-color: #333; // Fundo da barra de navegação
+
+/* Cores de Texto */
+$text-light: #f4f4f4; // Texto claro para rodapés e cabeçalhos
+$text-color: #333; // Texto padrão
+
+/* Cores de Breadcrumbs e Bordas */
+$breadcrumbs-color: #555; // Cor dos breadcrumbs
+$borderbutton-color: #ff9900; // Cor do botão
+$hover-color: $borderbutton-color; // Efeito hover para links e botões
+
+/* Cores de Fundo Claro */
+$mainbck-color: #f4f4f4; // Fundo claro para o corpo

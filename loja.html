@@ -3,15 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Titulo</title>
-    <link rel="stylesheet" href="styling/styles.css" />
-    <link rel="icon" type="image/x-icon" href="imagens/Teemo.webp" />
+    <title>D.A POWERTECH</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.wikia.nocookie.net/p__/images/e/e3/Teemo_Render_2.png/revision/latest/thumbnail/width/360/height/360?cb=20210407171219&path-prefix=protagonist"
+    />
+    <link rel="stylesheet" href="/styling/styles.css" />
   </head>
   <body>
     <!-- Header -->
     <header class="header">
       <div class="main-header">
-        <img src="./imagens/logo2.png" alt="Logo" class="logo" />
+        <img src="./imagens/logo2.png" alt="Logo" class="logo desktop-logo" />
+        <img
+          src="./imagens/logo-sem-nome-beta.png"
+          alt="Logo"
+          class="logo mobile-logo"
+        />
         <div class="search-bar">
           <input type="text" placeholder="Pesquisar" />
           <button>Pesquisar</button>
@@ -28,52 +37,195 @@
         <a href="#">Telemóveis</a>
         <a href="#">Componentes PC</a>
       </nav>
+      <div class="breadcrumbs">
+        <a href="#">Home</a> > <a href="#">Produtos</a> > <span>Laptops</span>
+      </div>
     </header>
-    <!-- Breadcrumbs -->
-    <div class="breadcrumbs">
-      <a href="#">Home</a> > <a href="#">Produtos</a> >
-      <span>Laptops</span>
-    </div>
 
     <!-- Main -->
+    <main>
+      <div class="filters">
+        <h4>Área para Filtros:</h4>
+        <div class="filter-category">
+          <label for="category">Categoria do Produto:</label>
+          <select id="category">
+            <option>Computadores</option>
+            <option>Laptops</option>
+            <option>Telemóveis</option>
+            <option>Componentes</option>
+          </select>
+        </div>
 
-    <div class="container">
-      <aside class="sidebar">
-        <nav>
-          <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-          </ul>
-        </nav>
-      </aside>
+        <div class="filter-price">
+          <label for="price">Faixa de Preço:</label>
+          <input type="range" id="price" min="0" max="6000" />
+        </div>
 
-      <main class="content">
-        <h2>Conteúdo Principal</h2>
-        <p>Area de Conteudo.</p>
-      </main>
-    </div>
+        <div class="filter-brand">
+          <label>Marca:</label>
+          <div>
+            <input type="checkbox" id="apple" />
+            <label for="apple">Apple</label>
+          </div>
+          <div>
+            <input type="checkbox" id="samsung" />
+            <label for="samsung">Samsung</label>
+          </div>
+          <div>
+            <input type="checkbox" id="xiaomi" />
+            <label for="xiaomi">Xiaomi</label>
+          </div>
+          <div>
+            <input type="checkbox" id="amd" />
+            <label for="amd">AMD</label>
+          </div>
+          <div>
+            <input type="checkbox" id="msi" />
+            <label for="msi">MSI</label>
+          </div>
+        </div>
 
-    <footer class="footer">
-      <div class="termos-politicas">
-        <a href="#">Política de Privacidade</a>
-        <a href="#">Termos de Serviço</a>
-        <p>&copy; 2024 Diogo e André</p>
+        <div class="filter-availability">
+          <label>Disponibilidade:</label>
+          <div>
+            <input type="radio" id="available" name="availability" />
+            <label for="available">Disponível</label>
+          </div>
+          <div>
+            <input type="radio" id="out-of-stock" name="availability" />
+            <label for="out-of-stock">Esgotado</label>
+          </div>
+        </div>
       </div>
-      <div class="socials">
-        <a href="http://https://www.facebook.com/"
-          ><img src="./imagens/icones/facebook.png" alt="facebook"
-        /></a>
-        <a href="http://https://www.instagram.com/"
-          ><img src="./imagens/icones/instagram.png" alt="instagram"
-        /></a>
-        <a href="http://https://www.youtube.com/"
-          ><img src="./imagens/icones/youtube.png" alt="youtube"
-        /></a>
-        <a href="http://https://www.x.com/"
-          ><img src="./imagens/icones/twitter.png" alt="twitter"
-        /></a>
+
+      <div class="product-grid">
+        <div class="product">
+          <img src="caminho/para/produto1.jpg" alt="Produto 1" />
+          <h5>Título do Produto 1</h5>
+          <p>Descrição do produto 1.</p>
+          <p>Preço: €1000</p>
+        </div>
+        <div class="product">
+          <img src="caminho/para/produto2.jpg" alt="Produto 2" />
+          <h5>Título do Produto 2</h5>
+          <p>Descrição do produto 2.</p>
+          <p>Preço: €1500</p>
+        </div>
+        <div class="product">
+          <img src="caminho/para/produto3.jpg" alt="Produto 3" />
+          <h5>Título do Produto 3</h5>
+          <p>Descrição do produto 3.</p>
+          <p>Preço: €2000</p>
+        </div>
+        <div class="product">
+          <img src="caminho/para/produto4.jpg" alt="Produto 4" />
+          <h5>Título do Produto 4</h5>
+          <p>Descrição do produto 4.</p>
+          <p>Preço: €2500</p>
+        </div>
+        <div class="product">
+          <img src="caminho/para/produto5.jpg" alt="Produto 5" />
+          <h5>Título do Produto 5</h5>
+          <p>Descrição do produto 5.</p>
+          <p>Preço: €3000</p>
+        </div>
+        <div class="product">
+          <img src="caminho/para/produto6.jpg" alt="Produto 6" />
+          <h5>Título do Produto 6</h5>
+          <p>Descrição do produto 6.</p>
+          <p>Preço: €3500</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="social">
+          <img src="./imagens/logo2.png" alt="Logo da loja" class="logo" />
+          <h4>As nossas redes sociais</h4>
+          <ul class="social-icons">
+            <li>
+              <a
+                href="https://www.facebook.com/seu-perfil"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./imagens/icones/facebook.png" alt="Facebook" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./imagens/icones/instagram.png" alt="Instagram" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./imagens/icones/twitter.png" alt="Twitter" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="./imagens/icones/youtube.png" alt="Youtube" />
+              </a>
+            </li>
+          </ul>
+          <img
+            src="./imagens/escolha do consumidor.png"
+            alt="Escolha do Consumidor"
+            class="award"
+          />
+        </div>
+        <div class="links">
+          <div>
+            <h4>Apoio ao Cliente</h4>
+            <ul>
+              <li><a href="#">Envio de Encomendas e Portes</a></li>
+              <li><a href="#">Trocas e Devoluções</a></li>
+              <li><a href="#">Modos de Pagamento</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Informações Legais</h4>
+            <ul>
+              <li><a href="#">Termos e Condições</a></li>
+              <li><a href="#">Política de Privacidade</a></li>
+              <li><a href="#">Política de Cookies</a></li>
+              <li><a href="#">Livro de Reclamações</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Eventos</h4>
+            <ul>
+              <li><a href="#">Black Friday</a></li>
+              <li><a href="#">Natal</a></li>
+              <li><a href="#">Regresso às Aulas</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Links Úteis</h4>
+            <ul>
+              <li><a href="#">Área de Cliente</a></li>
+              <li><a href="#">Marcas</a></li>
+              <li><a href="#">Sobre a Loja</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 D.A POWERTECH. Todos os direitos reservados.</p>
       </div>
     </footer>
   </body>
