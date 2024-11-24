@@ -11,18 +11,6 @@ $text-light: #f4f4f4; // Cor clara para textos no footer
 /* Cores de Texto */
 /* Cores de Breadcrumbs e Bordas */
 /* Cores de Fundo Claro */
-/* $containerbck-color: #242424;
-$navback-color: #333;
-$breadcrumbs-color: #555;
-$borderbutton-color: #ff9900;
-$hoover-color: $borderbutton-color;
-$mainbck-color: #f4f4f4;
-$text-light: #f4f4f4; // Cor clara para textos no footer
- */
-/* Cores de Fundo */
-/* Cores de Texto */
-/* Cores de Breadcrumbs e Bordas */
-/* Cores de Fundo Claro */
 /* Importação das fontes do Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;700&display=swap");
 /* Fontes principais */
@@ -42,7 +30,7 @@ h5,
 h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  color: #333;
+  color: #f4f4f4;
 }
 
 h1 {
@@ -82,7 +70,7 @@ body {
 
 /* Header */
 .header {
-  background-color: white;
+  background-color: #242424;
   position: fixed;
   top: 0;
   width: 100%;
@@ -99,7 +87,7 @@ body {
 .header .main-header .logo {
   max-height: 50px;
   flex-shrink: 0;
-  filter: brightness(0) invert(0);
+  filter: brightness(0) invert(1);
 }
 .header .main-header .logo.desktop-logo {
   display: block;
@@ -119,26 +107,26 @@ body {
   padding: 10px;
   border: 1px solid #333;
   background-color: #1a1a1a;
-  color: #333;
+  color: #f4f4f4;
   border-radius: 4px 0 0 4px;
 }
 .header .main-header .search-bar input::-moz-placeholder {
-  color: #333;
+  color: #f4f4f4;
 }
 .header .main-header .search-bar input::placeholder {
-  color: #333;
+  color: #f4f4f4;
 }
 .header .main-header .search-bar button {
   padding: 10px 20px;
-  border: 1px solid white;
-  background-color: white;
-  color: #333;
+  border: 1px solid #333;
+  background-color: #333;
+  color: #f4f4f4;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
 }
 .header .main-header .search-bar button:hover {
-  background-color: white;
+  background-color: #404040;
   transform: scale(1.05);
 }
 .header .main-header .user-options {
@@ -148,7 +136,7 @@ body {
 .header .main-header .user-options a {
   margin-left: 15px;
   text-decoration: none;
-  color: #333;
+  color: #f4f4f4;
   padding: 5px 10px;
   position: relative;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -160,7 +148,7 @@ body {
 .header .categories-bar {
   display: flex;
   justify-content: center;
-  background-color: white;
+  background-color: #333;
   padding: 10px 0;
   flex-wrap: wrap;
 }
@@ -169,7 +157,7 @@ body {
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  color: #333;
+  color: #f4f4f4;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 .header .categories-bar a:hover {
@@ -204,11 +192,11 @@ main {
 }
 main .filters {
   flex: 1;
-  background-color: white;
+  background-color: #242424;
   border-radius: 8px;
   border: 1px solid #242424;
   padding: 10px;
-  color: #333;
+  color: #f4f4f4;
   height: 100%;
   width: 100%;
 }
@@ -235,7 +223,7 @@ main .filters .filter-availability label {
 main .filters h5 {
   margin: 0.5rem 0;
   font-size: 18px;
-  color: #333;
+  color: #f4f4f4;
   font-weight: normal;
 }
 main .filters .category {
@@ -243,8 +231,8 @@ main .filters .category {
   border: 2px solid #ff9900;
   border-radius: 5px;
   font-size: 16px;
-  background-color: white;
-  color: #333;
+  background-color: #333;
+  color: #f4f4f4;
   outline: none;
 }
 main .filters .filter-brand input[type=checkbox] {
@@ -325,7 +313,7 @@ main input[type=range]::-webkit-slider-thumb {
   display: none;
 }
 .product-grid .product {
-  background-color: white;
+  background-color: #242424;
   border: 1px solid #242424;
   padding: 1rem;
   border-radius: 8px;
@@ -343,7 +331,7 @@ main input[type=range]::-webkit-slider-thumb {
   text-decoration: none;
   font-weight: 500;
   font-size: 18px;
-  color: #333;
+  color: #f4f4f4;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 .product-grid .product a:hover {
@@ -351,13 +339,13 @@ main input[type=range]::-webkit-slider-thumb {
 }
 .product-grid .product p {
   margin: 0.25rem 0;
-  color: #333;
+  color: #f4f4f4;
 }
 
 /* Footer */
 .footer {
-  background-color: white;
-  color: #333;
+  background-color: #242424;
+  color: #f4f4f4;
   padding: 2rem;
   font-family: "Roboto", sans-serif;
 }
@@ -377,7 +365,7 @@ main input[type=range]::-webkit-slider-thumb {
 .footer .social .logo {
   max-width: 250px;
   margin-bottom: 1rem;
-  filter: brightness(0) invert(0);
+  filter: brightness(0) invert(1);
 }
 .footer .social h4 {
   font-size: 20px;
@@ -399,7 +387,7 @@ main input[type=range]::-webkit-slider-thumb {
 .footer .social .social-icons a img {
   width: 30px;
   height: auto;
-  filter: brightness(0) invert(0);
+  filter: brightness(0) invert(1);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 .footer .social .social-icons a img:hover {
@@ -442,7 +430,7 @@ main input[type=range]::-webkit-slider-thumb {
   margin-bottom: 0;
 }
 .footer .links > div ul li a {
-  color: #333;
+  color: #f4f4f4;
   text-decoration: none;
   font-size: 14px;
   transition: color 0.3s ease;
