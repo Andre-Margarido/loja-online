@@ -1,0 +1,175 @@
+.filters {
+  flex: 1;
+  background-color: $containerbck-color;
+  border-radius: 8px;
+  border: 1px solid $containerborder-color;
+  padding: 10px;
+  color: $text-light;
+  height: 100%;
+  width: 100%;
+
+  h4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: $font-size-lg;
+    font-family: $font-heading;
+    color: $hover-color;
+  }
+
+  // Receita para os filtros
+  .filter-category,
+  .filter-price,
+  .filter-brand,
+  .filter-availability {
+    margin-bottom: 1.5rem;
+  }
+
+  // Detalhes de cada filtro
+  .filter-category label,
+  .filter-price label,
+  .filter-brand label,
+  .filter-availability label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  h5 {
+    margin: 0.5rem 0;
+    font-size: $font-size-md;
+    color: $text-light;
+    font-weight: normal;
+  }
+  // Configuração do botão e menu de dropdownselect
+  .category {
+    padding: 10px;
+    border: 2px solid $borderbutton-color;
+    border-radius: 5px;
+    font-size: $font-size-base;
+    background-color: $navback-color;
+    color: $text-light;
+    outline: none;
+  }
+
+  .filter-brand {
+    input[type="checkbox"] {
+      //retirar efeitos default da checkbox para personalisar
+      -webkit-appearance: none;
+      width: 15px;
+      height: 15px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      background-color: #f0f0f0;
+      position: relative;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"]:checked {
+      //Cor após o check
+      background-color: $checkbox-color;
+      border-color: $checkbox-color;
+    }
+
+    input[type="checkbox"]:checked::before {
+      content: "✔";
+      position: absolute;
+      top: -4px;
+      color: white;
+    }
+  }
+}
+
+.filters.opened {
+  transform: none;
+  opacity: 1;
+}
+
+.botaofiltros {
+  border: 1px solid $containerborder-color;
+  border-radius: 5px;
+  font-size: $font-size-sm;
+  background-color: $navback-color;
+  color: $text-light;
+  outline: none;
+  display: none;
+  width: 30%;
+  align-self: flex-start;
+}
+
+.filter-availability {
+  input[type="radio"] {
+    // retirar aparencia normal do input radio
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    position: relative;
+    cursor: pointer;
+  }
+
+  input[type="radio"]:checked {
+    // Muda a cor interior do input radio
+    background-color: $checkbox-color;
+  }
+}
+.brand-option,
+.stock-option {
+  // Alinha opções do filtros lado-a-lado e niveladas
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none; //linha para poder costumizar a barra
+  width: 80%; // Ajusta a largura do input range
+  height: 8px;
+  border-radius: 5px;
+  outline: none;
+  display: flex;
+  justify-self: center; //reduzi a largura do input e alinhei ao centro
+
+  &::-webkit-slider-runnable-track {
+    //configuração da barra
+    -webkit-appearance: none;
+    height: 8px;
+    background: $borderbutton-color;
+    border-radius: 10px;
+  }
+
+  &::-webkit-slider-thumb {
+    //configuração do botão deslizavel na barra
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: $borderbutton-color;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin-top: -6px;
+    cursor: pointer;
+  }
+}
+
+// RESPONSIVE
+
+@media (max-width: 500px) {
+  .filters {
+    margin-top: 42px;
+    position: absolute;
+    min-width: 200px;
+    max-width: 350px;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  .botaofiltros {
+    display: inline-block;
+    cursor: pointer;
+    &:active {
+      border: 2px solid $borderbutton-color;
+    }
+  }
+}

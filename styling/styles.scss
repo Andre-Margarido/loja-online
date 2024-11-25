@@ -1,6 +1,8 @@
 @import "./foundations/colors";
-//@import "./foundations/colorslight";
+@import "./foundations/colorslight";
 @import "./foundations/typography";
+@import "./components/productgrid";
+@import "./components/sidebar";
 
 /* Geral */
 * {
@@ -19,7 +21,7 @@ body {
 /* Header */
 .header {
   background-color: $containerbck-color;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000; // Z-index para ficar acima de outros elementos
@@ -152,191 +154,14 @@ body {
 /* Main */
 main {
   display: flex;
-  padding: 180px 20px 20px;
+  padding: 20px 20px;
   gap: 20px;
 
-  .filters {
-    flex: 1;
-    background-color: $containerbck-color;
-    border-radius: 8px;
-    border: 1px solid $containerborder-color;
-    padding: 10px;
-    color: $text-light;
-    height: 100%;
-    width: 100%;
+  //responsive
 
-    h4 {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      font-size: $font-size-lg;
-      font-family: $font-heading;
-      color: $hover-color;
-    }
-
-    // Receita para os filtros
-    .filter-category,
-    .filter-price,
-    .filter-brand,
-    .filter-availability {
-      margin-bottom: 1.5rem;
-    }
-
-    // Detalhes de cada filtro
-    .filter-category label,
-    .filter-price label,
-    .filter-brand label,
-    .filter-availability label {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    h5 {
-      margin: 0.5rem 0;
-      font-size: $font-size-md;
-      color: $text-light;
-      font-weight: normal;
-    }
-    // Configuração do botão e menu de dropdownselect
-    .category {
-      padding: 10px;
-      border: 2px solid $borderbutton-color;
-      border-radius: 5px;
-      font-size: $font-size-base;
-      background-color: $navback-color;
-      color: $text-light;
-      outline: none;
-    }
-
-    .filter-brand {
-      input[type="checkbox"] {
-        //retirar efeitos default da checkbox para personalisar
-        -webkit-appearance: none;
-        width: 15px;
-        height: 15px;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-        background-color: #f0f0f0;
-        position: relative;
-        cursor: pointer;
-      }
-
-      input[type="checkbox"]:checked {
-        //Cor após o check
-        background-color: $checkbox-color;
-        border-color: $checkbox-color;
-      }
-
-      input[type="checkbox"]:checked::before {
-        content: "✔";
-        position: absolute;
-        top: -4px;
-        color: white;
-      }
-    }
-  }
-
-  .filter-availability {
-    input[type="radio"] {
-      // retirar aparencia normal do input radio
-      -webkit-appearance: none;
-      width: 12px;
-      height: 12px;
-      border: 2px solid #ccc;
-      border-radius: 50%;
-      background-color: #f0f0f0;
-      position: relative;
-      cursor: pointer;
-    }
-
-    input[type="radio"]:checked {
-      // Muda a cor interior do input radio
-      background-color: $checkbox-color;
-    }
-  }
-  .brand-option,
-  .stock-option {
-    // Alinha opções do filtros lado-a-lado e niveladas
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    gap: 10px;
-  }
-
-  input[type="range"] {
-    -webkit-appearance: none; //linha para poder costumizar a barra
-    width: 80%; // Ajusta a largura do input range
-    height: 8px;
-    border-radius: 5px;
-    outline: none;
-    display: flex;
-    justify-self: center; //reduzi a largura do input e alinhei ao centro
-
-    &::-webkit-slider-runnable-track {
-      //configuração da barra
-      -webkit-appearance: none;
-      height: 8px;
-      background: $borderbutton-color;
-      border-radius: 10px;
-    }
-
-    &::-webkit-slider-thumb {
-      //configuração do botão deslizavel na barra
-      -webkit-appearance: none;
-      width: 20px;
-      height: 20px;
-      background: $borderbutton-color;
-      border-radius: 50%;
-      border: 1px solid #fff;
-      margin-top: -6px;
-      cursor: pointer;
-    }
-  }
-}
-
-.product-grid {
-  flex: 5; // Área de produtos ocupa 5/6 do espaço
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  height: 100vh;
-  overflow: auto;
-
-  &::-webkit-scrollbar {
-    //scrollback da grid de produtos oculta
-    display: none;
-  }
-
-  .product {
-    background-color: $containerbck-color;
-    border: 1px solid $containerborder-color;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    min-height: 450px;
-
-    img {
-      width: 100%;
-      height: 60%;
-      object-fit: contain;
-    }
-
-    a {
-      margin: 0.5rem 0;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: $font-size-md;
-      color: $text-light;
-      transition: transform 0.3s ease, color 0.3s ease;
-
-      &:hover {
-        color: $hover-color;
-      }
-    }
-
-    p {
-      margin: 0.25rem 0;
-      color: $text-light;
-    }
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
