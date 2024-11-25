@@ -17,7 +17,6 @@ body {
   font-family: $font-body;
   font-size: $font-size-base;
   line-height: 1.6;
-  color: #333;
 }
 
 h1,
@@ -28,7 +27,7 @@ h5,
 h6 {
   font-family: $font-heading;
   font-weight: bold;
-  color: $containerbck-color; // Contraste para títulos
+  color: $text-light; // Contraste para títulos
 }
 
 h1 {

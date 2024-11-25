@@ -52,10 +52,10 @@
     <!-- Main -->
     <main>
       <div class="filters">
-        <h4>Área para Filtros:</h4>
+        <h4>Filtros:</h4>
         <div class="filter-category">
-          <label for="category">Categoria do Produto:</label>
-          <select id="category">
+          <label for="category"><h5>Categoria:</h5></label>
+          <select class="category" id="category">
             <option>Computadores</option>
             <option>Laptops</option>
             <option>Telemóveis</option>
@@ -64,41 +64,41 @@
         </div>
 
         <div class="filter-price">
-          <label for="price">Faixa de Preço:</label>
+          <label for="price"><h5>Preço:</h5></label>
           <input type="range" id="price" min="0" max="6000" />
         </div>
 
         <div class="filter-brand">
-          <label>Marca:</label>
-          <div>
+          <h5>Marca:</h5>
+          <div class="brand-option">
             <input type="checkbox" id="apple" />
             <label for="apple">Apple</label>
           </div>
-          <div>
+          <div class="brand-option">
             <input type="checkbox" id="samsung" />
             <label for="samsung">Samsung</label>
           </div>
-          <div>
+          <div class="brand-option">
             <input type="checkbox" id="xiaomi" />
             <label for="xiaomi">Xiaomi</label>
           </div>
-          <div>
+          <div class="brand-option">
             <input type="checkbox" id="amd" />
             <label for="amd">AMD</label>
           </div>
-          <div>
+          <div class="brand-option">
             <input type="checkbox" id="msi" />
             <label for="msi">MSI</label>
           </div>
         </div>
 
         <div class="filter-availability">
-          <label>Disponibilidade:</label>
-          <div>
+          <h5>Disponibilidade:</h5>
+          <div class="stock-option">
             <input type="radio" id="available" name="availability" />
             <label for="available">Disponível</label>
           </div>
-          <div>
+          <div class="stock-option">
             <input type="radio" id="out-of-stock" name="availability" />
             <label for="out-of-stock">Esgotado</label>
           </div>
@@ -107,39 +107,81 @@
 
       <div class="product-grid">
         <div class="product">
-          <img src="caminho/para/produto1.jpg" alt="Produto 1" />
-          <h5>Título do Produto 1</h5>
-          <p>Descrição do produto 1.</p>
-          <p>Preço: €1000</p>
+          <img
+            src="imagens\computadores\Apple iMac 24 Prateado.jpg"
+            alt="IMac 24 Prateado"
+          />
+          <a href="#">Apple IMac 24 Prateado</a>
+          <p>
+            Computador All-in-One de 24 polegadas com processador M3, perfeito
+            para trabalhar e jogar
+          </p>
+          <p>Preço: 2089.00€</p>
         </div>
         <div class="product">
-          <img src="caminho/para/produto2.jpg" alt="Produto 2" />
-          <h5>Título do Produto 2</h5>
-          <p>Descrição do produto 2.</p>
-          <p>Preço: €1500</p>
+          <img
+            src="imagens\computadores\Computador All-In-One Acer C27-1800 27 polegadas.jpg"
+            alt="Acer C27-1800"
+          />
+          <a href="#">All-In-One Acer C27-1800</a>
+          <p>
+            Computador Acer All-in-One com 16gb de RAM 1TB de SDD e Intel i5
+            12450H
+          </p>
+          <p>Preço: 849,00€</p>
         </div>
         <div class="product">
-          <img src="caminho/para/produto3.jpg" alt="Produto 3" />
-          <h5>Título do Produto 3</h5>
-          <p>Descrição do produto 3.</p>
-          <p>Preço: €2000</p>
+          <img
+            src="imagens\computadores\Computador Desktop Acer Nitro N50-650 Gaming Black.jpg"
+            alt="Acer Nitro N50 650"
+          />
+          <a href="#">Acer Nitro N50 650</a>
+          <p>
+            Desktop Acer com 16gb de RAM 1TB de SDD e Intel i5 13400F e Gráfica
+            RTX 4060
+          </p>
+          <p>Preço: 1049,00€</p>
         </div>
         <div class="product">
-          <img src="caminho/para/produto4.jpg" alt="Produto 4" />
-          <h5>Título do Produto 4</h5>
-          <p>Descrição do produto 4.</p>
-          <p>Preço: €2500</p>
+          <img
+            src="imagens\computadores\Computador Desktop Lenovo Legion T5 Gaming 26ARA8-663 Storm Grey.jpg"
+            alt="Lenovo Legion T5"
+          />
+          <a href="#">Lenovo Legion T5</a>
+          <p>
+            Desktop Acer com 32gb de RAM, 1TB de SDD, AMD Ryzen 9 7900 e Gráfica
+            RTX 4070
+          </p>
+          <p>Preço: €2999,90</p>
         </div>
         <div class="product">
           <img src="caminho/para/produto5.jpg" alt="Produto 5" />
-          <h5>Título do Produto 5</h5>
+          <a href="#">Título do Produto 5</a>
           <p>Descrição do produto 5.</p>
           <p>Preço: €3000</p>
         </div>
         <div class="product">
           <img src="caminho/para/produto6.jpg" alt="Produto 6" />
-          <h5>Título do Produto 6</h5>
+          <a href="#">Título do Produto 6</a>
           <p>Descrição do produto 6.</p>
+          <p>Preço: €3500</p>
+        </div>
+        <div class="product">
+          <img src="caminho/para/produto7.jpg" alt="Produto 7" />
+          <a href="#">Título do Produto 7</a>
+          <p>Descrição do produto 7.</p>
+          <p>Preço: €3500</p>
+        </div>
+        <div class="product">
+          <img src="caminho/para/produto8.jpg" alt="Produto 8" />
+          <a href="#">Título do Produto 8</a>
+          <p>Descrição do produto 8.</p>
+          <p>Preço: €3500</p>
+        </div>
+        <div class="product">
+          <img src="caminho/para/produto9.jpg" alt="Produto 9" />
+          <a href="#">Título do Produto 9</a>
+          <p>Descrição do produto 9.</p>
           <p>Preço: €3500</p>
         </div>
       </div>
