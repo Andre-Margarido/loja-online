@@ -1,0 +1,147 @@
+/* Footer */
+.footer {
+  background-color: $containerbck-color;
+  color: $text-light;
+  padding: 2rem;
+  font-family: $font-body;
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .social {
+    flex: 1;
+    text-align: left;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-left: 25px;
+
+    .logo {
+      max-width: 250px;
+      margin-bottom: 1rem;
+      filter: $filtro-logo;
+    }
+
+    h4 {
+      font-size: $font-size-lg;
+      margin-bottom: 1rem;
+      font-family: $font-heading;
+      color: $hover-color;
+    }
+
+    .social-icons {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      gap: 1rem;
+
+      a {
+        color: $hover-color;
+        text-decoration: none;
+
+        img {
+          width: 30px;
+          height: auto;
+          filter: $filtro-logo;
+          transition: transform 0.3s ease, filter 0.3s ease;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+
+        &:hover {
+          color: $borderbutton-color;
+        }
+      }
+    }
+
+    .award {
+      margin-top: 1rem;
+      max-width: 150px;
+    }
+  }
+
+  .links {
+    flex: 2;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-left: 20px;
+
+    > div {
+      // Nova regra para cada seção de links
+      flex: 1;
+      min-width: 150px;
+
+      h4 {
+        margin-bottom: 1rem;
+        font-size: $font-size-lg;
+        font-family: $font-heading;
+        color: $hover-color;
+        flex-basis: 100%;
+      }
+
+      ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        li {
+          margin-bottom: 0;
+
+          a {
+            color: $text-light;
+            text-decoration: none;
+            font-size: $font-size-sm;
+            transition: color 0.3s ease;
+
+            &:hover {
+              text-decoration: underline;
+              color: $borderbutton-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: $font-size-sm;
+    border-top: 1px solid $breadcrumbs-color;
+    padding-top: 1rem;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 860px) {
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .social {
+    margin: 0; // Reseta margens
+    margin-bottom: 1rem;
+  }
+
+  .links {
+    flex-direction: column; // Alinha os links em coluna
+    width: 100%; // Garante que ocupe toda a largura disponível
+
+    > div {
+      flex: 1; // Cada seção de link ocupa o espaço necessário
+      min-width: auto; // Remove a largura mínima se necessário
+    }
+  }
+}
