@@ -31,39 +31,24 @@
       font-family: $font-heading;
       color: $hover-color;
     }
+  }
 
-    .social-icons {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: flex-start;
-      gap: 1rem;
+  .social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
 
-      a {
-        color: $hover-color;
-        text-decoration: none;
-
-        img {
-          width: 30px;
-          height: auto;
-          filter: $filtro-logo;
-          transition: transform 0.3s ease, filter 0.3s ease;
-
-          &:hover {
-            transform: scale(1.1);
-          }
-        }
-
-        &:hover {
-          color: $borderbutton-color;
-        }
-      }
+    a {
+      color: $hover-color;
+      text-decoration: none;
     }
+  }
 
-    .award {
-      margin-top: 1rem;
-      max-width: 150px;
-    }
+  .award {
+    margin-top: 1rem;
+    max-width: 150px;
   }
 
   .links {
@@ -75,7 +60,6 @@
     margin-left: 20px;
 
     > div {
-      // Nova regra para cada seção de links
       flex: 1;
       min-width: 150px;
 
@@ -86,30 +70,6 @@
         color: $hover-color;
         flex-basis: 100%;
       }
-
-      ul {
-        display: flex;
-        list-style: none;
-        padding: 0;
-        flex-direction: column;
-        gap: 0.5rem;
-
-        li {
-          margin-bottom: 0;
-
-          a {
-            color: $text-light;
-            text-decoration: none;
-            font-size: $font-size-sm;
-            transition: color 0.3s ease;
-
-            &:hover {
-              text-decoration: underline;
-              color: $borderbutton-color;
-            }
-          }
-        }
-      }
     }
   }
 
@@ -119,6 +79,43 @@
     font-size: $font-size-sm;
     border-top: 1px solid $breadcrumbs-color;
     padding-top: 1rem;
+  }
+}
+
+// Seletores globais para evitar aninhamento profundo
+
+.footer .social-icons a img {
+  width: 30px;
+  height: auto;
+  filter: $filtro-logo;
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.footer .social-icons a:hover {
+  color: $borderbutton-color;
+}
+
+.footer .links ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer .links ul li a {
+  color: $text-light;
+  text-decoration: none;
+  font-size: $font-size-sm;
+  transition: color 0.3s ease;
+
+  &:hover {
+    text-decoration: underline;
+    color: $borderbutton-color;
   }
 }
 
@@ -136,12 +133,12 @@
   }
 
   .links {
-    flex-direction: column; // Alinha os links em coluna
-    width: 100%; // Garante que ocupe toda a largura disponível
+    flex-direction: column;
+    width: 100%;
 
     > div {
-      flex: 1; // Cada seção de link ocupa o espaço necessário
-      min-width: auto; // Remove a largura mínima se necessário
+      flex: 1;
+      min-width: auto;
     }
   }
 }
