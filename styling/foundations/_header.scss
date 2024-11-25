@@ -1,10 +1,10 @@
 /* Header */
 .header {
   background-color: $containerbck-color;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
-  z-index: 1000; // Z-index para ficar acima de outros elementos
+  z-index: 10; // Z-index para ficar acima de outros elementos
 
   .main-header {
     display: flex;
@@ -101,7 +101,7 @@
   margin: 0;
   padding: 10px 20px;
   background-color: $mainbck-color;
-  z-index: 500; // Z-index ajustado para estar acima
+  z-index: 5; // Z-index ajustado para estar acima
   font-size: 14px;
   width: 100%;
 
