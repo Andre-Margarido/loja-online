@@ -31,20 +31,12 @@ body {
     .logo {
       max-height: 50px;
       flex-shrink: 0;
-
-      &.desktop-logo {
-        display: block;
-      }
-
-      &.mobile-logo {
-        display: none;
-      }
     }
 
     .search-bar {
       display: flex;
       align-items: center;
-      flex: 1;
+      flex: 1; // Usa o espaço restante
       margin: 10px 20px;
       min-width: 200px;
 
@@ -68,14 +60,11 @@ body {
         color: $text-light;
         border-radius: 0 4px 4px 0;
         cursor: pointer;
-        transition: background-color 0.3s, transform 0.3s; // Suaviza alterações
+        transition: background-color 0.3s, transform 0.3s;
 
         &:hover {
-          background-color: lighten(
-            $navback-color,
-            5%
-          ); // Leve mudança de cor ao passar o mouse
-          transform: scale(1.05); // Aumenta ligeiramente o botão
+          background-color: lighten($navback-color, 5%);
+          transform: scale(1.05);
         }
       }
     }
@@ -89,12 +78,12 @@ body {
         text-decoration: none;
         color: $text-light;
         padding: 5px 10px;
-        position: relative; // Necessário para o efeito de hover
-        transition: color 0.3s ease, transform 0.3s ease; // Suaviza a transição
+        /*    position: relative; // Necessário para o efeito de hover
+        transition: color 0.3s ease, transform 0.3s ease; */
 
         &:hover {
-          color: $borderbutton-color; // Muda a cor do texto ao passar o mouse
-          transform: scale(1.05); // Aumenta ligeiramente ao passar o mouse
+          color: $borderbutton-color;
+          transform: scale(1.05);
         }
       }
     }
@@ -113,11 +102,11 @@ body {
       font-family: $font-heading;
       font-weight: bold;
       color: $text-light;
-      transition: transform 0.3s ease, color 0.3s ease; // Suaviza a transição
+      transition: transform 0.3s ease, color 0.3s ease;
 
       &:hover {
-        color: $hover-color; // Mudança de cor no hover
-        transform: scale(1.05); // Aumenta ligeiramente no hover
+        color: $hover-color;
+        transform: scale(1.05);
       }
     }
   }
@@ -341,7 +330,7 @@ main {
 @media (max-width: 860px) {
   /* Header */
   .main-header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     position: relative;
     padding: 10px;
@@ -352,19 +341,11 @@ main {
     align-self: flex-start;
     margin-bottom: 10px;
     max-height: 40px;
-
-    &.desktop-logo {
-      display: none; // Oculta o logo desktop em telas pequenas
-    }
-
-    &.mobile-logo {
-      display: block; // Exibe o logo mobile em telas pequenas
-    }
   }
 
   .user-options {
     flex-wrap: nowrap;
-    align-self: flex-start;
+    align-self: flex-end;
     margin-bottom: 10px;
     order: 1;
   }

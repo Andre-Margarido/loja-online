@@ -15,12 +15,19 @@
     <!-- Header -->
     <header class="header">
       <div class="main-header">
-        <img src="./imagens/logo2.png" alt="Logo" class="logo desktop-logo" />
-        <img
-          src="./imagens/logo-sem-nome-beta.png"
-          alt="Logo"
-          class="logo mobile-logo"
-        />
+        <picture>
+          <source
+            media="(min-width:860px)"
+            srcset="./imagens/logo2.png"
+            class="logo desktop-logo"
+          />
+          <source
+            media="(min-width:320px)"
+            srcset="./imagens/logo-sem-nome-beta.png"
+            class="logo mobile-logo"
+          />
+          <img src="./imagens/logo2.png" alt="logo" style="width: auto" />
+        </picture>
         <div class="search-bar">
           <input type="text" placeholder="Pesquisar" />
           <button>Pesquisar</button>
