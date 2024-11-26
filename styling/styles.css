@@ -261,8 +261,6 @@ input[type=range]::-webkit-slider-thumb {
   transition: padding 0.3s;
 }
 .header .main-header .logo {
-  /*  max-height: 50px; */
-  /*  flex-shrink: 0; */
   filter: brightness(0) invert(1);
 }
 .header .main-header .user-options {
@@ -351,8 +349,28 @@ input[type=range]::-webkit-slider-thumb {
   color: #555;
 }
 
+.categories-bar.opened {
+  transform: none;
+  opacity: 1;
+}
+
+.burguer {
+  border: 1px solid #242424;
+  outline: none;
+  display: none;
+  align-self: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+.hamburguer-button {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+
 /* Responsividade */
-@media (max-width: 100px) {
+@media (max-width: 1300px) {
   /* Header */
   .main-header {
     flex-direction: row;
@@ -371,6 +389,7 @@ input[type=range]::-webkit-slider-thumb {
     flex-wrap: nowrap;
     align-self: flex-end;
     margin-bottom: 10px;
+    padding-top: 30px;
   }
   .search-bar {
     order: 2;
@@ -379,6 +398,7 @@ input[type=range]::-webkit-slider-thumb {
     padding: auto;
     width: 100%;
     flex: auto;
+    padding-top: 40px;
   }
   .categories-bar {
     justify-content: flex-start;
@@ -386,7 +406,6 @@ input[type=range]::-webkit-slider-thumb {
   }
   .categories-bar {
     display: flex;
-    flex-direction: column;
     align-items: center;
   }
   .categories-bar a {
@@ -400,29 +419,9 @@ input[type=range]::-webkit-slider-thumb {
     background-color: #f4f4f4;
   }
 }
-.categories-bar.opened {
-  transform: none;
-  opacity: 1;
-}
-
-.burguer {
-  border: 1px solid #242424;
-  border-radius: 5px;
-  font-size: 14px;
-  background-color: #333;
-  color: #f4f4f4;
-  outline: none;
-  display: none;
-  width: 30%;
-  align-self: flex-start;
-}
-
 @media (max-width: 800px) {
   .categories-bar {
-    /* margin-top: 42px; */
     position: absolute;
-    /* min-width: 200px;
-    max-width: 350px; */
     transform: translateX(-100%);
     opacity: 0;
     transition: all 0.5s ease;
@@ -433,6 +432,18 @@ input[type=range]::-webkit-slider-thumb {
   }
   .burguer:active {
     border: 2px solid #ff9900;
+  }
+  .hamburguer-button {
+    display: flex;
+    background-color: transparent;
+    border-color: transparent;
+    width: 50px;
+  }
+  .hamburguer-button img {
+    width: 100%;
+  }
+  .hamburguer-button:hover {
+    transform: scale(1.05);
   }
 }
 /* Footer */
@@ -466,30 +477,18 @@ input[type=range]::-webkit-slider-thumb {
   font-family: "Montserrat", sans-serif;
   color: #ff9900;
 }
-.footer .social .social-icons {
+.footer .social-icons {
   list-style: none;
   padding: 0;
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
 }
-.footer .social .social-icons a {
+.footer .social-icons a {
   color: #ff9900;
   text-decoration: none;
 }
-.footer .social .social-icons a img {
-  width: 30px;
-  height: auto;
-  filter: brightness(0) invert(1);
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-.footer .social .social-icons a img:hover {
-  transform: scale(1.1);
-}
-.footer .social .social-icons a:hover {
-  color: #ff9900;
-}
-.footer .social .award {
+.footer .award {
   margin-top: 1rem;
   max-width: 150px;
 }
@@ -512,32 +511,45 @@ input[type=range]::-webkit-slider-thumb {
   color: #ff9900;
   flex-basis: 100%;
 }
-.footer .links > div ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.footer .links > div ul li {
-  margin-bottom: 0;
-}
-.footer .links > div ul li a {
-  color: #f4f4f4;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-.footer .links > div ul li a:hover {
-  text-decoration: underline;
-  color: #ff9900;
-}
 .footer .footer-bottom {
   margin-top: 2rem;
   text-align: center;
   font-size: 14px;
   border-top: 1px solid #555;
   padding-top: 1rem;
+}
+
+.footer .social-icons a img {
+  width: 30px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.footer .social-icons a img:hover {
+  transform: scale(1.1);
+}
+
+.footer .social-icons a:hover {
+  color: #ff9900;
+}
+
+.footer .links ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer .links ul li a {
+  color: #f4f4f4;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+.footer .links ul li a:hover {
+  text-decoration: underline;
+  color: #ff9900;
 }
 
 /* Responsividade */

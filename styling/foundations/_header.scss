@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 10; // Z-index para ficar acima de outros elementos
 
   .main-header {
     display: flex;
@@ -55,18 +55,13 @@
         transform: scale(1.05);
       }
     }
-
-    &.opened {
-      transform: none;
-      opacity: 1;
-    }
   }
 }
 
 .search-bar {
   display: flex;
   align-items: center;
-  flex: 1;
+  flex: 1; // Usa o espaço restante
   margin: 10px 20px;
 
   input {
@@ -102,7 +97,7 @@
   margin: 0;
   padding: 10px 20px;
   background-color: $mainbck-color;
-  z-index: 5;
+  z-index: 5; // Z-index ajustado para estar acima
   font-size: 14px;
   width: 100%;
 
@@ -120,84 +115,112 @@
   }
 }
 
+// burguer button
+.categories-bar.opened {
+  transform: none;
+  opacity: 1;
+}
+.burguer {
+  border: 1px solid $containerborder-color;
+  outline: none;
+  display: none;
+  align-self: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+.hamburguer-button {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+
 /* Responsividade */
-@media (max-width: 800px) {
+@media (max-width: 1300px) {
+  /* Header */
   .main-header {
     flex-direction: row;
     align-items: flex-start;
     position: relative;
     padding: 10px;
+  }
 
-    .logo {
-      order: 0;
-      align-self: flex-start;
-      margin-bottom: 10px;
-      max-height: 40px;
-    }
+  .logo {
+    order: 0;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    max-height: 40px;
+  }
 
-    .user-options {
-      order: 1;
-      flex-wrap: nowrap;
-      align-self: flex-end;
-      margin-bottom: 10px;
-    }
+  .user-options {
+    order: 1;
+    flex-wrap: nowrap;
+    align-self: flex-end;
+    margin-bottom: 10px;
+    padding-top: 30px;
   }
 
   .search-bar {
     order: 2;
     align-self: stretch;
     margin-top: 10px;
+    padding: auto;
     width: 100%;
     flex: auto;
+    padding-top: 40px;
   }
 
   .categories-bar {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    background-color: $navback-color;
-    width: 100%;
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: all 0.5s ease;
+    justify-content: flex-start;
+    padding: 10px;
+  }
+
+  .categories-bar {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
+    align-items: center;
 
     a {
       margin: 5px;
       font-size: 14px;
       padding: 10px;
-      text-decoration: none;
-      color: $text-light;
-      border-radius: 5px;
-
-      &:hover {
-        background-color: $hover-color;
-        color: $navback-color;
-      }
-    }
-
-    &.active {
-      transform: translateX(0);
-      opacity: 1;
     }
   }
 
+  .breadcrumbs {
+    font-size: 12px;
+    padding: 10px;
+    background-color: $mainbck-color;
+  }
+}
+
+// burguer button
+@media (max-width: 800px) {
+  .categories-bar {
+    position: absolute;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
   .burguer {
     display: inline-block;
     cursor: pointer;
-    border: 1px solid $containerborder-color;
-    border-radius: 5px;
-    font-size: $font-size-sm;
-    background-color: $navback-color;
-    color: $text-light;
-    width: 30%;
-    align-self: flex-start;
-
     &:active {
       border: 2px solid $borderbutton-color;
+    }
+  }
+
+  .hamburguer-button {
+    display: flex;
+    background-color: transparent;
+    border-color: transparent;
+    width: 50px;
+
+    img {
+      width: 100%;
+    }
+
+    &:hover {
+      transform: scale(1.05);
     }
   }
 }
