@@ -89,7 +89,7 @@ p {
   width: 100%;
   height: 60%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 .product-grid .product a {
   margin: 0.5rem 0;
@@ -166,7 +166,7 @@ p {
   color: #f4f4f4;
   outline: none;
 }
-.filters .filter-brand input[type="checkbox"] {
+.filters .filter-brand input[type=checkbox] {
   -webkit-appearance: none;
   width: 15px;
   height: 15px;
@@ -176,11 +176,11 @@ p {
   position: relative;
   cursor: pointer;
 }
-.filters .filter-brand input[type="checkbox"]:checked {
+.filters .filter-brand input[type=checkbox]:checked {
   background-color: #ff9900;
   border-color: #ff9900;
 }
-.filters .filter-brand input[type="checkbox"]:checked::before {
+.filters .filter-brand input[type=checkbox]:checked::before {
   content: "✔";
   position: absolute;
   top: -4px;
@@ -204,7 +204,7 @@ p {
   align-self: flex-start;
 }
 
-.filter-availability input[type="radio"] {
+.filter-availability input[type=radio] {
   -webkit-appearance: none;
   width: 12px;
   height: 12px;
@@ -214,7 +214,7 @@ p {
   position: relative;
   cursor: pointer;
 }
-.filter-availability input[type="radio"]:checked {
+.filter-availability input[type=radio]:checked {
   background-color: #ff9900;
 }
 
@@ -226,7 +226,7 @@ p {
   gap: 10px;
 }
 
-input[type="range"] {
+input[type=range] {
   -webkit-appearance: none;
   width: 80%;
   height: 8px;
@@ -235,13 +235,13 @@ input[type="range"] {
   display: flex;
   justify-self: center;
 }
-input[type="range"]::-webkit-slider-runnable-track {
+input[type=range]::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   height: 8px;
   background: #ff9900;
   border-radius: 10px;
 }
-input[type="range"]::-webkit-slider-thumb {
+input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
@@ -631,4 +631,4 @@ main {
     flex-direction: column;
     align-items: center;
   }
-} /*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
