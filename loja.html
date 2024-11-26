@@ -16,7 +16,7 @@
     <header class="header">
       <div class="main-header">
         <picture class="logo">
-          <source media="(min-width:800px)" srcset="./imagens/logo2.png" />
+          <source media="(min-width:1000px)" srcset="./imagens/logo2.png" />
           <source
             media="(min-width:20px)"
             srcset="./imagens/logo-sem-nome-beta.png"
@@ -105,8 +105,7 @@
       </div>
 
       <div class="product-grid">
-        <div class="product product-promo">
-          <div class="tag">Promo!</div>
+        <div class="product">
           <img
             src="imagens\computadores\Apple iMac 24 Prateado.jpg"
             alt="IMac 24 Prateado"
@@ -116,9 +115,7 @@
             Computador All-in-One de 24 polegadas com processador M3, perfeito
             para trabalhar e jogar
           </p>
-
-          <p class="discount">Novo Preço: 1750.00€</p>
-          <p class="price">Preço: 2089.00€</p>
+          <p>Preço: 2089.00€</p>
         </div>
         <div class="product">
           <img
@@ -154,7 +151,7 @@
             Desktop Acer com 32gb de RAM, 1TB de SDD, AMD Ryzen 9 7900 e Gráfica
             RTX 4070
           </p>
-          <p>Preço: 2999,90€</p>
+          <p>Preço: €2999,90</p>
         </div>
         <div class="product">
           <img
@@ -274,11 +271,9 @@
       document.querySelector(".botaofiltros").addEventListener("click", () => {
         document.querySelector(".filters").classList.toggle("opened");
       });
-      document
-        .querySelector(".hamburguer-button")
-        .addEventListener("click", () => {
-          document.querySelector(".categories-bar").classList.toggle("opened");
-        });
+      document.querySelector(".burguer").addEventListener("click", () => {
+        document.querySelector(".categories-bar").classList.toggle("opened");
+      });
     </script>
   </body>
 </html>
