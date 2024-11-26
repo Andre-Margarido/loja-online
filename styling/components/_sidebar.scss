@@ -154,15 +154,17 @@ input[type="range"] {
 
 // RESPONSIVE
 
-@media (max-width: 500px) {
+@media (max-width: 1024px) {
   .filters {
-    margin-top: 42px;
+    margin-top: 40px;
     position: absolute;
     min-width: 200px;
     max-width: 350px;
     transform: translateX(-100%);
     opacity: 0;
     transition: all 0.5s ease;
+    z-index: 1;
+    align-self: flex-start;
   }
 
   .botaofiltros {
@@ -171,5 +173,11 @@ input[type="range"] {
     &:active {
       border: 2px solid $borderbutton-color;
     }
+  }
+}
+
+@media (max-width: 512px) {
+  .filters {
+    align-self: center;
   }
 }

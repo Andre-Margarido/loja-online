@@ -11,11 +11,39 @@
     border-radius: 8px;
     text-align: center;
     min-height: 450px;
+    position: relative;
+
+    .tag {
+      position: absolute;
+      background-color: $borderbutton-color;
+      color: $text-light;
+      font-size: $font-size-sm;
+      padding: 4px;
+      border: 2px solid $borderbutton-color;
+      border-radius: 8px;
+      right: 5px;
+    }
+
+    .discount {
+      color: $borderbutton-color;
+    }
+    .discount,
+    .tag {
+      display: none;
+      font-weight: bold;
+    }
+    &-promo .discount,
+    .tag {
+      display: block;
+    }
+    &-promo .price {
+      text-decoration: line-through;
+    }
 
     img {
       width: 100%;
       height: 60%;
-      object-fit: contain;
+      object-fit: cover;
     }
 
     a {
@@ -40,13 +68,13 @@
 
 // RESPONSIVE
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 512px) {
   .product-grid {
     grid-template-columns: 1fr;
     justify-items: center;
