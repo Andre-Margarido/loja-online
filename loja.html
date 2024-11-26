@@ -16,7 +16,7 @@
     <header class="header">
       <div class="main-header">
         <picture class="logo">
-          <source media="(min-width:1000px)" srcset="./imagens/logo2.png" />
+          <source media="(min-width:800px)" srcset="./imagens/logo2.png" />
           <source
             media="(min-width:20px)"
             srcset="./imagens/logo-sem-nome-beta.png"
@@ -32,8 +32,8 @@
           <a href="#">O meu cesto</a>
         </div>
       </div>
-      <button class="hamburger-button">
-        <img src="./imagens/icones/menu.png" alt="Menu" class="burguer" />
+      <button class="hamburguer-button">
+        <img src="./imagens/icones/burger-bar.png" alt="Menu" class="burguer" />
       </button>
       <nav class="categories-bar">
         <a href="#">Outlet</a>
@@ -154,7 +154,7 @@
             Desktop Acer com 32gb de RAM, 1TB de SDD, AMD Ryzen 9 7900 e Gráfica
             RTX 4070
           </p>
-          <p>Preço: €2999,90</p>
+          <p>Preço: 2999,90€</p>
         </div>
         <div class="product">
           <img
@@ -274,9 +274,11 @@
       document.querySelector(".botaofiltros").addEventListener("click", () => {
         document.querySelector(".filters").classList.toggle("opened");
       });
-      document.querySelector(".burguer").addEventListener("click", () => {
-        document.querySelector(".categories-bar").classList.toggle("opened");
-      });
+      document
+        .querySelector(".hamburguer-button")
+        .addEventListener("click", () => {
+          document.querySelector(".categories-bar").classList.toggle("opened");
+        });
     </script>
   </body>
 </html>
